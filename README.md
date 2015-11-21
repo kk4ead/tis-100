@@ -1,5 +1,4 @@
-# Tessellated Intelligence System Best Practices - 
-  Patterns of Node Communication
+# Tessellated Intelligence System Best Practices - Patterns of Node Communication
 
 An (eventually) comprehensive spoiler for TIS-100
 
