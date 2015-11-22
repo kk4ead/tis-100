@@ -6,24 +6,24 @@ Note: The `MODE` indication on each node shows the node's state from the _previo
 
 These instructions always execute in one `RUN` cycle.
 
-`JMP/JEZ/JNZ/JGZ/JLZ <label>`
-`JRO <literal>`
-`MOV <literal|ACC|NIL> <ACC|NIL>`
-`ADD <literal>`
-`SUB <literal>`
-`NEG`
-`SWP`
-`SAV`
-`NOP`
+- `JMP/JEZ/JNZ/JGZ/JLZ <label>`
+- `JRO <literal>`
+- `MOV <literal|ACC|NIL> <ACC|NIL>`
+- `ADD <literal>`
+- `SUB <literal>`
+- `NEG`
+- `SWP`
+- `SAV`
+- `NOP`
 
 ## 1+ cycles (blocking I/O reads)
 
 These instructions block in the `READ` state until a value is available on `port`, then execute in one `RUN` cycle.
 
-`JRO <port>`
-`MOV <port> <ACC|NIL>`
-`ADD <port>`
-`SUB <port>`
+- `JRO <port>`
+- `MOV <port> <ACC|NIL>`
+- `ADD <port>`
+- `SUB <port>`
 
 ## 2+ cycles (blocking I/O writes)
 
@@ -37,8 +37,8 @@ Stack Memory Nodes are the exception to this rule. A Stack Memory Node can execu
 
 ### Unconditionally
 
-`JRO 0`
-`<label>: JMP <label>`
+- `JRO 0`
+- `<label>: JMP <label>`
 
 ### Conditionally
 
@@ -48,3 +48,5 @@ Stack Memory Nodes are the exception to this rule. A Stack Memory Node can execu
 ### [REDACTED]
 
 [REDACTED]
+
+[Back](chapter01.md) - [Contents](README.md)
