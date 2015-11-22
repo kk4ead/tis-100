@@ -8,7 +8,7 @@ This is a collection of notes on the TIS-100 architecture, optimization techniqu
 
 ## Part I: General
 
-### Chapter 1: Implementation Details
+### [Chapter 1: Implementation Details](chapter01.md)
 
 This chapter documents various syntax quirks and undefined behaviors, such as integer overflows (everything is clipped to +/- 999), segfaults (can't happen), and multiple simultaneous reads and writes to a Stack Memory Node.
 
@@ -41,3 +41,5 @@ George Schaertl (KK4EAD)
 ## License
 
 CC BY-SA 4.0
+
+[Next](chapter01.md)
