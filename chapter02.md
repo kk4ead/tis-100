@@ -27,7 +27,13 @@ These instructions block in the `READ` state until a value is available on `port
 
 ## 2+ cycles (blocking I/O writes)
 
-These instructions place a value on `port`, block in the `WRTE` state for at least one cycle, then execute in one `RUN` cycle when the value is consumed by another node.
+This instruction places a value on `port`, blocks in the `WRTE` state for at least one cycle, then executes in one `RUN` cycle when the value is consumed by another node.
+
+- `MOV <literal|ACC|NIL> <port>`
+
+This instruction blocks until a value is available on `port1`, blocks in the `WRTE` state for at least one cycle, then executes in one `RUN` cycle when the value is consumed by the node on the other end of `port2`.
+
+- `MOV <port1> <port2>`
 
 Writes take two cycles because values are written to _ports_, not to other nodes. The destination node cannot read the value until after the source node has written to the port, and the source node cannot continue execution until the value is read and the port is empty again.
 
