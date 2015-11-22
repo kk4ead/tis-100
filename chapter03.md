@@ -77,7 +77,9 @@ at node 5 just to make sure the values come out in the right order, but we'll sa
 [Save file](save/20176.0.txt)
 
 Node 2: calculate `IN.B - IN.A` and pass it on
+
 Node 9: pass `IN.B - IN.A` to `OUT.N` and node 10
+
 Node 10: `-(IN.B - IN.A) = IN.A - IN.B`; pass it to `OUT.P`
 
 ## Segment 21340: Signal Comparator
