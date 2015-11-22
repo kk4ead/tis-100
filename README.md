@@ -12,7 +12,7 @@ This is a collection of notes on the TIS-100 architecture, optimization techniqu
 
 This chapter documents various syntax quirks and undefined behaviors, such as integer overflows (everything is clipped to +/- 999), segfaults (can't happen), and multiple simultaneous reads and writes to a Stack Memory Node.
 
-### Chapter 2: Instruction Timings
+### [Chapter 2: Instruction Timings](chapter02.md)
 
 In short: writing to a port takes two cycles (or more if it blocks) unless a Stack Memory Node is doing the writing; reading from a port takes one cycle (or more if it blocks); everything else takes one cycle.
 
