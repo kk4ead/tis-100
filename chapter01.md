@@ -4,6 +4,8 @@
 
 Commas are treated like whitespace.
 
+Lines containing only comments and whitespace are ignored (not treated as NOPs), do not count toward relative offsets for the `JRO` instruction, and do not add to your instruction count for scoring purposes. Nodes containing only comments and whitespace remain in the `IDLE` state and do not add to your node count for scoring purposes.
+
 Numbers and punctuation (except for `':'`, `' '`, `'#'`, `'!'`, and `','`) are valid characters in label names.
 
 ## Implementation-Defined Behavior
@@ -17,6 +19,10 @@ Stack Memory Nodes hold up to 15 values.
 ### Arithmetic Overflows
 
 Results are clipped to +/- 999 and do not wrap around. Integer literals are clipped before evaluation; i.e. `ADD 1000` behaves the same as `ADD 999`, even when `ACC` contains a negative value.
+
+### Uninitialized Pointers
+
+Using the `LAST` pseudo-port when its value is `N/A` (before it has been initialized with `ANY`) has the same effect as using `NIL`.
 
 ## Undefined Behavior
 
