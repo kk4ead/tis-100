@@ -1,0 +1,31 @@
+@0
+ MOV 2 ACC      #1
+OUTER: SUB 1    #2
+ SAV            #3
+ MOV 638 ACC    #4
+INNER: SUB 1    #5
+ JGZ INNER      #6
+ SWP            #7
+ JGZ OUTER      #8
+ MOV UP DOWN    #9
+
+@1
+MOV RIGHT DOWN
+
+@2
+MOV UP LEFT
+
+@3
+MOV UP DOWN
+
+@4
+MOV UP DOWN
+
+@5
+MOV UP DOWN
+
+@6
+MOV UP RIGHT
+
+@7
+MOV LEFT DOWN

@@ -55,4 +55,4 @@ Stack Memory Nodes are the exception to this rule. A Stack Memory Node can execu
 
 [REDACTED]
 
-[Back](chapter01.md) - [Contents](README.md)
+[Back](chapter01.md) - [Contents](README.md) - [Next](chapter03.md)
