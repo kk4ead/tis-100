@@ -141,8 +141,16 @@ If we had to choose between a fixed range of values (for example, 1 through 5), 
 
 Node 2 contains all the logic. When `IN.S` is nonzero, we need to discard one of the values, otherwise `IN.A` and `IN.B` will get out of sync with each other.
 
-### Optimized for speed: ~200 cycles, 7? nodes according to the statistics
+### Using JRO: 239 cycles, 7 nodes, 22 instructions
 
-Solution not available.
+[Save file](save/22280.1.txt)
 
-[Back](chapter02.md) - [Contents](README.md)
+Notes coming soon. TL;DR: it's easiest to use `JRO (4*IN.S) + 5`.
+
+### Optimized for speed: 204 cycles, 7 nodes, 21 instructions
+
+[Save file](save/22280.2.txt)
+
+Notes coming soon. TL;DR: parallelize!
+
+[Back](chapter02.md) - [Contents](README.md) - [Next](chapter04.md)

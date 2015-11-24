@@ -22,9 +22,9 @@ In short: writing to a port takes two cycles (or more if it blocks) unless a Sta
 
 An introduction to loops, parallelization using `ANY`, and `switch` statements with `JRO`.
 
-### Chapter 4: Sequence Generator through Interrupt Handler
+### [Chapter 4: Sequence Generator through Interrupt Handler](chapter04.md)
 
-(in progress)
+Pipelining: it's like parallelism, but in series!
 
 ### Chapter 5: Signal Pattern Detector through Signal Multiplier
 
