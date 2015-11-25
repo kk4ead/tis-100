@@ -28,7 +28,7 @@ For homework, swap the order of the `MOV ACC RIGHT` and `MOV ACC DOWN` instructi
 
 # Segment 31904: Sequence Counter
 
-## 238 cycles, 6 nodes, 22 instructions
+## Optimized for speed: 238 cycles, 6 nodes, 22 instructions
 
 [Save file](save/31904.0.txt)
 
