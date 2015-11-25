@@ -43,13 +43,15 @@ Stack Memory Nodes are the exception to this rule. A Stack Memory Node can execu
 
 ### Unconditionally
 
-- `JRO 0`
+- `JRO <0|NIL>`
 - `<label>: JMP <label>`
 
 ### Conditionally
 
 - `JRO ACC`
 - `<label>: JEZ/JNZ/JGZ/JLZ <label>`
+
+_Exercise:_ What happens when you `JRO UP/DOWN/LEFT/RIGHT` and the input value is zero? How might that be useful?
 
 ### [REDACTED]
 

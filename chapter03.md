@@ -120,18 +120,7 @@ Nodes 6 through 8 use the processed input value as an index into the rest of the
         
 Since a positive input can result in a value anywhere from 5 to 998, and a `JRO` past the end of the program behaves the same as a `JRO` to the end, the 5 "case" needs to be the last instruction in the program.
 
-If we had to choose between a fixed range of values (for example, 1 through 5), we could write a straightforward jump table instead:
-
-        LOOP:
-         # ... #
-         JRO ACC
-        1: JMP 5
-        2: JMP 5
-        3: JMP ONE
-        4: JMP 5
-        5: MOV 0 DOWN
-         JMP LOOP
-        ONE: MOV 1 DOWN
+If we had to choose between a fixed range of values (for example, 1 through 5), we could write a straightforward jump table instead. And in the next problem, we'll do that.
 
 ## Segment 22280: Signal Multiplexer
 
@@ -145,12 +134,19 @@ Node 2 contains all the logic. When `IN.S` is nonzero, we need to discard one of
 
 [Save file](save/22280.1.txt)
 
-Notes coming soon. TL;DR: it's easiest to use `JRO (4*IN.S) + 5`.
+Node 2 calculates `(4*IN.S) + 5`, which transforms -1 / 0 / 1 into 1 / 5 / 9. Node 6 uses that value as an argument to `JRO`, and reads `IN.A` and `IN.B` from nodes 5 and 7. 
+
+Notes on this program:
+ - The `NOP`s are never executed; they're only there for padding.
+ - It's much easier to multiply a number by a power of 2 than by an arbitrary integer.
+ - We can read `IN.B` into the `ACC` of node 6 even before the `JRO`, since we know we'll need to consume both input values anyway.
 
 ### Optimized for speed: 204 cycles, 7 nodes, 21 instructions
 
 [Save file](save/22280.2.txt)
 
-Notes coming soon. TL;DR: parallelize!
+The trick here is recognizing that instead of having one node that chooses between three output values, we can use _two_ nodes that each make a simpler choice between _two_ output values. When `IN.S` is zero, we add both `IN.A` and `IN.B` to the output; when `IN.S` is -1, we only add `IN.A`; and when `IN.S` is 1, we only add `IN.B`.
+
+In C syntax, the behavior we're looking for is: `OUT = ( (IN.S > 0) ? 0 : IN.A ) + ( (IN.S < 0) ? 0 : IN.B )`. The conditional assignments are parallelized between nodes 1 and 3, and node 6 performs the addition.
 
 [Back](chapter02.md) - [Contents](README.md) - [Next](chapter04.md)
