@@ -28,6 +28,24 @@ For homework, swap the order of the `MOV ACC RIGHT` and `MOV ACC DOWN` instructi
 
 # Segment 31904: Sequence Counter
 
-(in progress)
+## 238 cycles, 6 nodes, 22 instructions
+
+[Save file](save/31904.0.txt)
+
+Node 7 behaves like an extra register for node 8, storing the sum of all the inputs so far.
+
+Node 9 stores its count of inputs in `BAK`. It resets the counter by `SWP`ing in the zero that ends each sequence of numbers.
+
+### Without using SWP: 267 cycles, 7 nodes, 24 instructions.
+
+[Save file](save/31904.1.txt)
+
+This doesn't take many changes; just use node 10 as an extra register for node 8.
+
+### Optimized for size: 324 cycles, 4 nodes, 20 instructions
+
+[Save file](save/31904.2.txt)
+
+Node 9 gets its input routed through node 8, and node 4's `BAK` stores the running sum instead of node 7.
 
 [Back](chapter03.md) - [Contents](README.md)
