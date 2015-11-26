@@ -1,6 +1,6 @@
 # Tessellated Intelligence System Best Practices - Patterns of Node Communication
 
-An (eventually) comprehensive spoiler for (Zachtronics')[http://www.zachtronics.com/] (TIS-100)[http://www.zachtronics.com/tis-100/]
+An (eventually) comprehensive spoiler for (TIS-100)[http://www.zachtronics.com/tis-100/]
 
 ## About
 
