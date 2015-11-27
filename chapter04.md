@@ -68,5 +68,15 @@ For homework:
  - Try to predict how many cycles would be wasted by swapping the `SUB 10` and `SUB UP` instructions in node 8.
  - Swap the `MOV ACC DOWN` and `MOV ACC RIGHT` instructions in node 1. How many cycles are wasted?
  - Can you restore the program's original throughput by changing two additional instructions?
+ 
+# Segment 33762: Interrupt Handler
+ 
+## Optimized for speed: 204 cycles, 10 nodes, 44 instructions
+ 
+[Save file](save/33762.0.txt)
+
+Nodes 0 through 3 output their respective input numbers when their inputs change from zero to one; they output zero for all other conditions. (They are `ARMED` when the previous input was zero, and `DISARMED` when the previous input was one.)
+
+Nodes 4 through 7 collect the outputs from nodes 0 through 3. Since we are guaranteed that two interrupts will never change in the same input cycle, adding the output values together results in the correct value for `OUT`.
 
 [Back](chapter03.md) - [Contents](README.md)
