@@ -28,6 +28,8 @@ Pipelining: it's like parallelism, but in series!
 
 ### Chapter 5: Signal Pattern Detector through Signal Multiplier
 
+(in progress)
+
 ### Chapter 6: Image Test Pattern 1 through Histogram Viewer
 
 ### Chapter 7: Signal Window Filter through Sequence Sorter
