@@ -1,0 +1,42 @@
+@0
+## OPTIMIZED
+
+@1
+0: MOV ANY ACC
+ MOV 0 ANY
+ JNZ 0
+1: MOV ANY ACC
+ MOV 0 ANY
+ JNZ 0
+2: MOV ANY ACC
+ JNZ RST
+ MOV 1 ANY
+ JMP 2
+RST: MOV 0 ANY
+
+@2
+ MOV LEFT DOWN
+
+@3
+
+
+@4
+
+
+@5
+ MOV UP DOWN
+
+@6
+
+
+@7
+
+
+@8
+
+
+@9
+ MOV UP DOWN
+
+@10
+

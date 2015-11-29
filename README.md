@@ -26,7 +26,7 @@ An introduction to loops, parallelization using `ANY`, and `switch` statements w
 
 Pipelining: it's like parallelism, but in series!
 
-### Chapter 5: Signal Pattern Detector through Signal Multiplier
+### [Chapter 5: Signal Pattern Detector through Signal Multiplier](chapter05.md)
 
 (in progress)
 

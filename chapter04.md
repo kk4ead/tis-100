@@ -79,4 +79,4 @@ Nodes 0 through 3 output their respective input numbers when their inputs change
 
 Nodes 4 through 7 collect the outputs from nodes 0 through 3. Since we are guaranteed that two interrupts will never change in the same input cycle, adding the output values together results in the correct value for `OUT`.
 
-[Back](chapter03.md) - [Contents](README.md)
+[Back](chapter03.md) - [Contents](README.md) - [Next](chapter05.md)
