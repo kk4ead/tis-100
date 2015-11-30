@@ -37,4 +37,38 @@ Node 8 calculates the minimum value by comparing each input to the smallest valu
 
 Node 9 calculates the maximum value similarly.
 
+## Segment 42656: Sequence Reverser
+
+### 349 cycles, 4 nodes, 11 instructions
+
+[Save file](save/42656.0.txt)
+
+Node 5 saves a zero to the empty stack, so it can detect the "bottom" of the stack without having to keep track of the number of values on the stack. Node 5 reads input values and pushes them onto the stack until it receives a zero, then pops values off the stack and sends them to the output until it sees a -1 again.
+
+The terminating zero in each input sequence gets written to the stack and then immediately discarded. This is still faster than checking whether the input is zero every time before writing it to the stack, like this:
+
+        FWD: MOV LEFT ACC
+         JEZ REV
+         MOV ACC UP
+         JMP FWD
+        REV: # ...
+
+In general, it's faster to write loops that have only one conditional jump at the very end of the loop, and that just continue to the next part of the program when the loop is finished. We add one instruction after the loop, but make the body of the loop (which is executed many times) one instruction shorter:
+
+        FWD: MOV LEFT ACC
+         MOV ACC UP
+         JGZ FWD
+         MOV UP NIL
+        REV: # ...
+
+### Without Stack Memory Nodes: 759 cycles, 7 nodes, 42 instructions
+
+[Save file](save/42656.1.txt)
+
+Node 4 makes each input sequence exactly 6 values long by adding -1s to the end, and removes the trailing zero.
+
+Node 5 reads in a sequence of exactly 6 values from `LEFT`, then outputs the same sequence in reverse order to `DOWN`, followed by a 0. The values are stored in nodes 2, 6, and 8. (The sequence length could be increased by also using those nodes' `BAK` registers.)
+
+Node 7 passes values from node 5 to the output, discarding all -1s that were added by node 4.
+
 [Back](chapter04.md) - [Contents](README.md)

@@ -28,7 +28,7 @@ Pipelining: it's like parallelism, but in series!
 
 ### [Chapter 5: Signal Pattern Detector through Signal Multiplier](chapter05.md)
 
-State machines and avoiding gratuitous `SWP/SAV`s.
+State machines; avoiding gratuitous `SWP/SAV`s; preventing stack underflows without using a counter.
 
 ### Chapter 6: Image Test Pattern 1 through Histogram Viewer
 
