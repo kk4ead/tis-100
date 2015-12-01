@@ -41,6 +41,7 @@ State machines; avoiding gratuitous `SWP/SAV`s; preventing stack underflows with
 ## Authors
 
 George Schaertl (KK4EAD)
+[CaitSith2](https://github.com/CaitSith2) -- optimizations in Chapter 4
 
 ## License
 
