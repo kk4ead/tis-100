@@ -71,9 +71,10 @@ For homework:
  
 # Segment 33762: Interrupt Handler
  
-## Optimized for speed: 204 cycles, 10 nodes, 44 instructions
+## Optimized for speed: 202 cycles, 9 nodes, 42 instructions
  
 [Save file](save/33762.0.txt)
+Finishing touches by [CaitSith2](https://github.com/CaitSith2).
 
 Nodes 0 through 3 output their respective input numbers when their inputs change from zero to one; they output zero for all other conditions. (They are `ARMED` when the previous input was zero, and `DISARMED` when the previous input was one.)
 
