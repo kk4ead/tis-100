@@ -48,6 +48,12 @@ This doesn't take many changes; just use node 10 as an extra register for node 8
 
 Node 9 gets its input routed through node 8, and node 4's `BAK` stores the running sum instead of node 7.
 
+## Optimized for size without using SWP: 298 cycles, 4 nodes, 19 instructions
+
+[Save file](save/31904.3.txt)
+
+Node 4 decides whether the input is 0 or not.  If it is not 0, the input is passed to Node 8, where it is added, and node 9 gets instructed to increment the ACC. A 0 likewise tells nodes 8 and 9 to output their totals, and reset.  This is done JRO style.
+
 # Segment 32050: Signal Edge Detector
 
 ## Optimized for size: 347 cycles, 4 nodes, 14 instructions
