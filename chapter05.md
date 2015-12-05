@@ -75,7 +75,7 @@ Node 7 passes values from node 5 to the output, discarding all -1s that were add
 
 ### 1007 cycles, 5 nodes, 27 instructions
 
-[Save file](43786.2.txt)
+[Save file](save/43786.2.txt)
 
 Nodes 1 and 2 are reused from Sequence Generator, and determine which is larger between `IN.A` and `IN.B`.
 
