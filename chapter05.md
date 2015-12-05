@@ -83,4 +83,4 @@ Node 5 stores the larger input in `BAK`, and passes a sequence to node 7 with le
 
 Node 7 is reused from Sequence Counter, and calculates the sum of each sequence to give the result of the multiplication.
 
-[Back](chapter04.md) - [Contents](README.md)
+[Back](chapter04.md) - [Contents](README.md) - [Next](chapter06.md)

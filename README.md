@@ -30,7 +30,9 @@ Pipelining: it's like parallelism, but in series!
 
 State machines; avoiding gratuitous `SWP/SAV`s; preventing stack underflows without using a counter.
 
-### Chapter 6: Image Test Pattern 1 through Histogram Viewer
+### [Chapter 6: Image Test Pattern 1 through Histogram Viewer](chapter06.md)
+
+Pretty pictures!
 
 ### Chapter 7: Signal Window Filter through Sequence Sorter
 

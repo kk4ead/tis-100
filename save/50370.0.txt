@@ -1,0 +1,43 @@
+@0
+
+
+@1
+
+
+@2
+
+
+@3
+
+
+@4
+ROW: MOV ACC DOWN
+ ADD 1
+
+@5
+COL: MOV 0 DOWN
+ MOV 15 ACC
+PXL: MOV 3 DOWN
+ SUB 1
+ JNZ PXL
+END: MOV -1 DOWN
+
+@6
+
+
+@7
+## SPEED OPTIMIZED
+
+@8
+ROW: MOV UP RIGHT
+ MOV 15 ACC
+PXL: MOV 3 RIGHT
+ SUB 1
+ JNZ PXL
+END: NOP
+
+@9
+ MOV ANY DOWN
+
+@10
+
