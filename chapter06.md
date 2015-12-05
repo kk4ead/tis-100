@@ -16,7 +16,7 @@ Node 5 stores the Y coordinate, saving the `SWP/ADD 1/SAV` delay at the end of e
 
 ### Optimized for speed: 1187 cycles, 4 nodes, 15 instructions
 
-[Save file](save/50370.2.txt)
+[Save file](save/50370.0.txt)
 
 Nodes 5 and 8 take turns writing values to the output. Since node 5 writes both the first and last value in each row, node 8 has to wait one cycle at the end of the row to avoid getting out of order.
 
