@@ -73,9 +73,9 @@ Node 7 passes values from node 5 to the output, discarding all -1s that were add
 
 ## Segment 43786: Signal Multiplier
 
-### 1007 cycles, 5 nodes, 27 instructions
+### 1007 cycles, 5 nodes, 32 instructions
 
-[Save file](save/43786.2.txt)
+[Save file](save/43786.0.txt)
 
 Nodes 1 and 2 are reused from Sequence Generator, and determine which is larger between `IN.A` and `IN.B`.
 
