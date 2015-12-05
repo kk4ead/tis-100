@@ -71,4 +71,16 @@ Node 5 reads in a sequence of exactly 6 values from `LEFT`, then outputs the sam
 
 Node 7 passes values from node 5 to the output, discarding all -1s that were added by node 4.
 
+## Segment 43786: Signal Multiplier
+
+### 1007 cycles, 5 nodes, 27 instructions
+
+[Save file](43786.2.txt)
+
+Nodes 1 and 2 are reused from Sequence Generator, and determine which is larger between `IN.A` and `IN.B`.
+
+Node 5 stores the larger input in `BAK`, and passes a sequence to node 7 with length equal to the smaller input.
+
+Node 7 is reused from Sequence Counter, and calculates the sum of each sequence to give the result of the multiplication.
+
 [Back](chapter04.md) - [Contents](README.md)
