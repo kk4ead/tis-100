@@ -80,6 +80,7 @@ For homework:
 ## Optimized for speed: 202 cycles, 9 nodes, 42 instructions
  
 [Save file](save/33762.0.txt)
+
 Finishing touches by [CaitSith2](https://github.com/CaitSith2).
 
 Nodes 0 through 3 output their respective input numbers when their inputs change from zero to one; they output zero for all other conditions. (They are `ARMED` when the previous input was zero, and `DISARMED` when the previous input was one.)
@@ -89,8 +90,9 @@ Nodes 4 through 7 collect the outputs from nodes 0 through 3. Since we are guara
 ## Optimzed for size: 427 cycles, 6 nodes, 40 instructions
 
 [Save file](save/33762.1.txt)
+
 Solution by [CaitSith2](https://github.com/CaitSith2).
 
-Works much like the optimized for speed solution, ecept that node 0 passes the value to node 1, node 1 passes its value, and node 0's value to node 2,  node 3 passes it value to node 2, and node 2 passes its value down, along with the values from nodes 0, 1, and 3.  Node 6 then adds up the values and passes the result down.
+Works much like the optimized for speed solution, ecept that node 0 passes the value to node 1; node 1 passes its value and node 0's value to node 2; node 3 passes its value to node 2; and node 2 passes its value down, along with the values from nodes 0, 1, and 3.  Node 6 then adds up the values and passes the result down.
 
 [Back](chapter03.md) - [Contents](README.md) - [Next](chapter05.md)
