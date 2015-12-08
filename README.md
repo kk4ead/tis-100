@@ -44,7 +44,7 @@ Pretty pictures!
 
 George Schaertl (KK4EAD)
 
-[CaitSith2](https://github.com/CaitSith2) -- optimizations in Chapter 4
+[CaitSith2](https://github.com/CaitSith2) -- optimizations in Chapters 4 & 5
 
 ## License
 
