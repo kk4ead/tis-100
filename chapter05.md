@@ -65,9 +65,11 @@ In general, it's faster to write loops that have only one conditional jump at th
 
 [Save file](save/42656.1.txt)
 
-Node 4 makes each input sequence exactly 6 values long by adding -1s to the end, and removes the trailing zero.
+Optimized by [CaitSith2](https://github.com/CaitSith2).
 
-Node 5 reads in a sequence of exactly 6 values from `LEFT`, then outputs the same sequence in reverse order to `DOWN`, followed by a 0. The values are stored in nodes 2, 6, and 8. (The sequence length could be increased by also using those nodes' `BAK` registers.)
+Node 1 makes each input sequence exactly 6 values long by adding -1s to the end, and removes the trailing zero.
+
+Node 5 reads in a sequence of exactly 6 values from `LEFT`, then outputs the same sequence in reverse order to `DOWN`, followed by a 0. Three of the values are stored temporarily in node 6.
 
 Node 7 passes values from node 5 to the output, discarding all -1s that were added by node 4.
 
