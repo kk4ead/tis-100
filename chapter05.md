@@ -105,4 +105,18 @@ Solution by [CaitSith2](https://github.com/CaitSith2).
 
 Node 2 compares `IN.A` and `IN.B` as in the naive solution, and passes the larger value first to minimize the number of repeated additions. Nodes 5, 6, and 7 in this solution (with some additional plumbing in node 4) are equivalent to nodes 2, 5, and 7 in the size-optimized solution.
 
+### Shift-and-add: 789 cycles, 5 nodes, 46 instructions
+
+[Save file](save/43786.3.txt)
+
+Optimized solution by [CaitSith2](https://github.com/CaitSith2).
+
+This is a commonly used algorithm for multiplying two numbers, similar to the pencil-and-paper "long multiplication" taught in elementary schools.
+
+Nodes 1 and 4 calculate the binary representation of `IN.A` (with 3 representing a binary one and 1 representing a binary zero) and pass it, most significant bit first, to node 5.
+
+Node 5 uses the binary value of `IN.A` to determine when to pass a copy of `IN.B` to node 7 and when to pass a zero value.
+
+Node 7 sums up the values from node 5, shifting `ACC` one bit to the left (i.e. multiplying it by 2) after each step.
+
 [Back](chapter04.md) - [Contents](README.md) - [Next](chapter06.md)
