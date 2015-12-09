@@ -85,9 +85,9 @@ Node 5 stores the larger input in `BAK`, and passes a sequence to node 7 with le
 
 Node 7 is reused from Sequence Counter, and calculates the sum of each sequence to give the result of the multiplication.
 
-### Optimized for size: 474 cycles, 6 nodes, 45 instructions
+### Optimized for size: 639 cycles, 4 nodes, 27 instructions
 
-[Save file](save/43786.1.txt) 639 cycles, 4 nodes, 27 instructions
+[Save file](save/43786.1.txt)
 
 Solution by [CaitSith2](https://github.com/CaitSith2).
 
