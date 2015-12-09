@@ -75,7 +75,7 @@ Node 7 passes values from node 5 to the output, discarding all -1s that were add
 
 ## Segment 43786: Signal Multiplier
 
-### 1007 cycles, 5 nodes, 32 instructions
+### Naive solution: 1007 cycles, 5 nodes, 32 instructions
 
 [Save file](save/43786.0.txt)
 
@@ -84,5 +84,25 @@ Nodes 1 and 2 are reused from Sequence Generator, and determine which is larger 
 Node 5 stores the larger input in `BAK`, and passes a sequence to node 7 with length equal to the smaller input.
 
 Node 7 is reused from Sequence Counter, and calculates the sum of each sequence to give the result of the multiplication.
+
+### Optimized for size: 474 cycles, 6 nodes, 45 instructions
+
+[Save file](save/43786.1.txt) 639 cycles, 4 nodes, 27 instructions
+
+Solution by [CaitSith2](https://github.com/CaitSith2).
+
+Node 2 passes `IN.A` to node 5, followed by two copies of `10 - IN.B`.
+
+Node 5 stores `IN.A` in `ACC` and passes one copy of `10 - IN.B` to node 7, followed by a sequence of `IN.A` repeated `IN.B` times. Instead of decrementing a loop counter, the `JRO` instruction is used to _unroll_ the loop by starting with a sequence of 10 `MOV ACC DOWN` instructions and skipping the first `10 - IN.B`.
+
+Node 7 starts with zero in `ACC` and uses the copy of `10 - IN.B` passed from node 5 to count how many times to add `IN.A`. After writing the result to `OUT`, `ACC` is reset to zero.
+
+### Optimized for speed: 474 cycles, 6 nodes, 45 instructions
+
+[Save file](save/43786.2.txt)
+
+Solution by [CaitSith2](https://github.com/CaitSith2).
+
+Node 2 compares `IN.A` and `IN.B` as in the naive solution, and passes the larger value first to minimize the number of repeated additions. Nodes 5, 6, and 7 in this solution (with some additional plumbing in node 4) are equivalent to nodes 2, 5, and 7 in the size-optimized solution.
 
 [Back](chapter04.md) - [Contents](README.md) - [Next](chapter06.md)
