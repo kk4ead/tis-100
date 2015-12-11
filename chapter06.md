@@ -28,4 +28,16 @@ Nodes 5 and 8 take turns writing values to the output. Since node 5 writes both 
 
 This is similar to the solution for Image Test Pattern 1, but nodes 5 and 8 swap colors on alternate rows.
 
+## Segment 52544: Exposure Mask Viewer
+
+### 617 cycles, 4 nodes, 36 instructions
+
+[Save file](save/52544.1.txt)
+
+For each rectangle, node 2 passes the starting X value and the width straight to node 5. For each row of the current rectangle, node 2 passes the current Y value and the number of rows remaining to node 5.
+
+For each rectangle, node 5 stores the starting X value and 6 minus the width, to allow unrolling the loop in node 9. (No width values in the input are greater than 6.) For each row of the current rectangle, node 5 passes the starting X value, the current Y value, and 6 minus the width to node 9.
+
+For each row, node 9 passes the starting X value, the current Y value, and a sequence of the correct width to the output.
+
 [Back](chapter05.md) - [Contents](README.md)
