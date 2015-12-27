@@ -6,7 +6,7 @@ An (eventually) comprehensive spoiler for [Zachtronics'](http://www.zachtronics.
 
 This is a collection of notes on the TIS-100 architecture, optimization techniques, and annotated solutions to some of the easier problems.
 
-## Part I: General
+## Part I: General Information
 
 ### [Chapter 1: Implementation Details](chapter01.md)
 
@@ -16,7 +16,7 @@ This chapter documents various syntax quirks and undefined behaviors, such as in
 
 In short: writing to a port takes two cycles (or more if it blocks) unless a Stack Memory Node is doing the writing; reading from a port takes one cycle (or more if it blocks); everything else takes one cycle.
 
-## Part II: Spoilers
+## Part II: TIS-100 Spoilers
 
 ### [Chapter 3: Self-Test Diagnostic through Signal Multiplexer](chapter03.md)
 
@@ -34,17 +34,19 @@ State machines; avoiding gratuitous `SWP/SAV`s; preventing stack underflows with
 
 Pretty pictures!
 
-### Chapter 7: Signal Window Filter through Sequence Sorter
+### [Chapter 7: Signal Window Filter through Sequence Sorter](chapter07.md)
 
-### Chapter 8: [REDACTED]
+A crash course in algorithms.
 
-## Part III: [REDACTED]
+### Chapter 8: [REDACTED] and [REDACTED]
+
+## Part III: TIS-NET Spoilers
 
 ## Authors
 
-George Schaertl (KK4EAD)
+[George Schaertl](https://github.com/kk4ead) (KK4EAD)
 
-[CaitSith2](https://github.com/CaitSith2) -- optimizations in Chapters 4 & 5
+[CaitSith2](https://github.com/CaitSith2) -- many optimized solutions
 
 ## License
 

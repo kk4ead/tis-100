@@ -48,4 +48,38 @@ Optimization by [CaitSith2](https://github.com/CaitSith2).
 
 For each rectangle, the starting X value and the width are passed through node 4 instead of tying up node 2 for four extra cycles.
 
-[Back](chapter05.md) - [Contents](README.md)
+## Segment 53897: Histogram Viewer
+
+### Optimized for size: 4736 cycles, 4 nodes, 18 instructions
+
+[Save file](save/53897.0.txt)
+
+All the computation takes place in node 9. For each column, the X value is stored in `BAK` and the starting Y value (18 minus the column height) is read into `ACC`. A pixel is drawn and the Y value is incremented until it reaches the bottom of the screen, then the X value is incremented and a new starting Y value is read from the input.
+
+### Optimized for speed: 2557 cycles, 5 nodes, 26 instructions
+
+[Save file](save/53897.1.txt)
+
+Node 6 generates Y values, starting at the bottom of the screen for each column and moving upward until the column is finished.
+
+Node 8 generates X values, starting at the left of the screen and moving one pixel to the right after each column is finished.
+
+Node 9 does nothing but write values to the output. Since it is only idle 3% of the time (nodes 6 and 8 take an additional 3 cycles to reset in between columns), this solution is almost--but not quite--theoretically optimal.
+
+### Theoretically optimal: 2467 cycles, 6 nodes, 25 instructions
+
+[Save file](save/53897.2.txt)
+
+Solution by [CaitSith2](https://github.com/CaitSith2).
+
+Node 1 makes 2 copies of the input.
+
+One copy gets fed into node 5, which determines which Y value the line is to start drawing at.
+
+Node 8 then feeds the Y to node 9, and increments Y.
+
+Node 2 determines if Node 6 should increment its X value prior to Node 6 feeding its X value to node 9.
+
+Node 9 takes X, Y and draws the histogram lines, one pixel at a time.
+
+[Back](chapter05.md) - [Contents](README.md) - [Next](chapter07.md)

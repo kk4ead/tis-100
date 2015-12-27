@@ -1,12 +1,16 @@
 # Chapter 1: Implementation Details
 
+*WARNING:* This section is up to date as of November 21, 2015. Zachtronics has explicitly warned that any "implementation-defined" or "undefined" behaviors may change in future versions of TIS-100. 
+
 ## Syntax
 
 Commas are treated like whitespace.
 
 Lines containing only comments and whitespace are ignored (not treated as NOPs), do not count toward relative offsets for the `JRO` instruction, and do not add to your instruction count for scoring purposes. Nodes containing only comments and whitespace remain in the `IDLE` state and do not add to your node count for scoring purposes.
 
-Numbers and punctuation (except for `':'`, `' '`, `'#'`, `'!'`, and `','`) are valid characters in label names.
+Numbers and punctuation (except for `':'`, `' '`, `'#'`, `'!'`, `','`, and `'@'`) are valid characters in label names.
+
+Nodes are numbered starting at 0 for the top left node and continuing left to right, top to bottom, skipping communication failures and Stack Memory Nodes. The `'@'` character is used in the save files to indicate the start of each node's code, and cannot be entered in the game's interface.
 
 ## Implementation-Defined Behavior
 

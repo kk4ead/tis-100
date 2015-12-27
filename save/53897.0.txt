@@ -1,0 +1,46 @@
+@0
+## SMALL
+
+@1
+ MOV UP DOWN
+
+@2
+
+
+@3
+
+
+@4
+
+
+@5
+ MOV UP DOWN
+
+@6
+
+
+@7
+
+
+@8
+ MOV UP RIGHT
+
+@9
+DY: MOV LEFT ACC
+X: SWP
+ MOV ACC DOWN
+ SWP
+ NEG
+ ADD 18
+Y: MOV ACC DOWN
+ MOV 3 DOWN
+ MOV -1 DOWN
+ NEG
+ ADD 17
+ JGZ X
+ SWP
+ ADD 1
+ SAV
+
+@10
+
