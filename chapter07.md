@@ -29,4 +29,18 @@ Node 7 keeps a running total of the 3 most recent inputs in `ACC` by subtracting
 
 Node 8 keeps a running total of the 5 most recent inputs in `ACC` by subtracting the 6th-most recent input, adding the most recent input, then writing the result to `OUT.5`.
 
+## Segment 61212: Signal Divider
+
+### Optimized for speed: 1553 cycles, 9 nodes, 70 instructions
+
+[Save file](save/61212.1.txt)
+
+Solution by [CaitSith2](https://github.com/CaitSith2).
+
+This solution uses a shift-and-subtract algorithm that is similar to both paper-and-pencil long division and the shift-and-add multiplication algorithm for Signal Multiplier.
+
+Nodes 1 and 2 calculate the eights and fours place of the quotient, storing the quotient in the left Stack Memory Node and the divisor in the right Stack Memory Node.
+
+Nodes 4 and 5 calculate the twos and ones place of the quotient, storing the quotient in node 6 and passing the remainder through node 6 to node 7.
+
 [Back](chapter06.md) - [Contents](README.md)
