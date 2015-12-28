@@ -38,7 +38,9 @@ Pretty pictures!
 
 A crash course in algorithms.
 
-### Chapter 8: [REDACTED] and [REDACTED]
+### [Chapter 8: [REDACTED] and [REDACTED]](chapter08.md)
+
+[REDACTED]
 
 ## Part III: TIS-NET Spoilers
 

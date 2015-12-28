@@ -43,4 +43,20 @@ Nodes 1 and 2 calculate the eights and fours place of the quotient, storing the 
 
 Nodes 4 and 5 calculate the twos and ones place of the quotient, storing the quotient in node 6 and passing the remainder through node 6 to node 7.
 
-[Back](chapter06.md) - [Contents](README.md)
+## Segment 62711: Sequence Indexer
+
+### 4466 cycles, 6 nodes, 34 instructions
+
+[Save file](save/62711.0.txt)
+
+Writeup in progress.
+
+## Segment 63534: Sequence Sorter
+
+### Insertion sort: 2761 cycles, 9 nodes, 77 instructions
+
+[Save file](save/63534.0.txt)
+
+Writeup in progress.
+
+[Back](chapter06.md) - [Contents](README.md) - [Next](chapter08.md)
