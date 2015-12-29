@@ -49,7 +49,13 @@ Nodes 4 and 5 calculate the twos and ones place of the quotient, storing the quo
 
 [Save file](save/62711.0.txt)
 
-Writeup in progress.
+No attempt was made to optimize this solution.
+
+Node 0 reads a sequence of numbers from `IN.V` and stores it (in reverse order) to the upper Stack Memory Node, keeping track of the sequence length in `BAK`. After reading the terminating zero, it passes the sequence length to node 2 and halts.
+
+Node 3 reads the sequence length from node 2 and stores it in `BAK`. It then passes the sequence back and forth between the upper and lower Stack Memory Nodes, while passing copies of the sequence to node 4.
+
+Node 4 reads an index value from `IN.X` (through node 1), discards values from node 3 until it reaches the correct position in the sequence (in the loop beginning at `A: MOV LEFT  NIL`), writes a value from node 3 to the output (through node 7), and discards the remaining values from node 3 (in the loop beginning at `C: MOV LEFT  ACC`).
 
 ## Segment 63534: Sequence Sorter
 
@@ -57,6 +63,12 @@ Writeup in progress.
 
 [Save file](save/63534.0.txt)
 
-Writeup in progress.
+No attempt was made to optimize this solution.
+
+The sequence being constructed is stored in reverse order in the lower Stack Memory Node, and stored in forward order in the upper Stack Memory Node.
+
+Node 3 reads a value from the input sequence (through node 0), then passes it to node 2 for each value in the existing sequence. Nodes 2 and 6 compare the current input value to each existing value, insert it at the correct position in the sequence, and pass the sequence to the upper Stack Memory Node through node 3. After a value is inserted, nodes 3 and 4 pass the sequence back to the lower Stack Memory Node.
+
+On reading the terminating zero, node 3 signals node 7 to begin executing by passing it a value. Nodes 1, 5, 7, and 8 reverse the sequence one last time, pass it to the output, and pass a value back to node 3 to let execution begin on the next sequence. This is only necessary because the author failed to keep track of which stack held the forward sequence and which one held the reversed sequence.
 
 [Back](chapter06.md) - [Contents](README.md) - [Next](chapter08.md)
