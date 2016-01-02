@@ -1,0 +1,33 @@
+@0
+## OPTIMIZED
+
+@1
+ MOV UP DOWN
+
+@2
+
+
+@3
+
+
+@4
+ MOV UP RIGHT
+
+@5
+ MOV 0 UP
+FWD: MOV LEFT ACC
+ MOV ACC UP
+ JGZ FWD
+ MOV UP NIL
+REV: MOV UP ACC
+ MOV ACC DOWN
+ JGZ REV
+
+@6
+
+
+@7
+ MOV UP DOWN
+
+@8
+

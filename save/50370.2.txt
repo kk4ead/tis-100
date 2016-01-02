@@ -1,0 +1,39 @@
+@0
+
+
+@1
+
+
+@2
+
+
+@3
+
+
+@4
+
+
+@5
+ROW: MOV ACC DOWN
+ ADD 1
+
+@6
+
+
+@7
+
+
+@8
+## TWO NODES
+
+@9
+COL: MOV 0 DOWN
+ROW: MOV UP DOWN
+ MOV 30 ACC
+PXL: MOV 3 DOWN
+ SUB 1
+ JNZ PXL
+END: MOV -1 DOWN
+
+@10
+
