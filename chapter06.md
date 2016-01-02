@@ -1,4 +1,7 @@
-# Chapter 6: Image Test Pattern 1 through Histogram Viewer
+---
+layout: page
+title: Chapter 6 - Pretty Pictures
+---
 
 ## Segment 50370: Image Test Pattern 1
 
@@ -82,4 +85,4 @@ Node 2 determines if Node 6 should increment its X value prior to Node 6 feeding
 
 Node 9 takes X, Y and draws the histogram lines, one pixel at a time.
 
-[Back](chapter05.md) - [Contents](README.md) - [Next](chapter07.md)
+[Back](chapter05.html) - [Contents](index.html) - [Next](chapter07.html)

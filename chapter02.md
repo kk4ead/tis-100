@@ -1,4 +1,7 @@
-# Chapter 2: Instruction Timings
+---
+layout: page
+title: Chapter 2 - Instruction Timings
+---
 
 Note: The `MODE` indication on each node shows the node's state from the _previous_ cycle, not the current cycle. For example, all nodes show `IDLE` on the first cycle after startup.
 
@@ -59,4 +62,4 @@ _Exercise:_ What happens when you `JRO UP/DOWN/LEFT/RIGHT` and the input value i
 
 [REDACTED]
 
-[Back](chapter01.md) - [Contents](README.md) - [Next](chapter03.md)
+[Back](chapter01.html) - [Contents](index.html) - [Next](chapter03.html)

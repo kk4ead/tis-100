@@ -1,4 +1,7 @@
-# Chapter 5: Signal Pattern Detector through Signal Multiplier
+---
+layout: page
+title: Chapter 5 - Using Stack Memory Nodes
+---
 
 ## Segment 40196: Signal Pattern Detector
 
@@ -10,7 +13,7 @@ Node 0 contains all the logic. The program switches between different _states_ (
 
 ### Historical version
 
-The Signal Pattern Detector was originally node 40633, and the sequence to be detected was 1, 5, 4. Here is the code for node 0 in this version:
+The Signal Pattern Detector was originally segment 40633, and the sequence to be detected was 1, 5, 4. Here is the code for node 0 in this version:
 
         START: JRO UP
         ONE:   MOV -99 ACC
@@ -119,4 +122,4 @@ Node 5 uses the binary value of `IN.A` to determine when to pass a copy of `IN.B
 
 Node 7 sums up the values from node 5, shifting `ACC` one bit to the left (i.e. multiplying it by 2) after each step.
 
-[Back](chapter04.md) - [Contents](README.md) - [Next](chapter06.md)
+[Back](chapter04.html) - [Contents](index.html) - [Next](chapter06.html)

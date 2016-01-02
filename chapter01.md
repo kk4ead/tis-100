@@ -1,4 +1,7 @@
-# Chapter 1: Implementation Details
+---
+layout: page
+title: Chapter 1 - Implementation Details
+---
 
 *WARNING:* This section is up to date as of November 21, 2015. Zachtronics has explicitly warned that any "implementation-defined" or "undefined" behaviors may change in future versions of TIS-100. 
 
@@ -64,4 +67,4 @@ Writes beyond the right or bottom edge of the display are ignored.
 
 Since any negative value terminates the command sequence, it is not possible to specify X or Y coordinates beyond the left or top edges of the display.
 
-[Contents](README.md) - [Next](chapter02.md)
+[Contents](index.html) - [Next](chapter02.html)

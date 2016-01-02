@@ -1,4 +1,7 @@
-# Chapter 7: Signal Window Filter through Sequence Sorter
+---
+layout: page
+title: Chapter 7 - Algorithms
+---
 
 ## Segment 60099: Signal Window Filter
 
@@ -71,4 +74,4 @@ Node 3 reads a value from the input sequence (through node 0), then passes it to
 
 On reading the terminating zero, node 3 signals node 7 to begin executing by passing it a value. Nodes 1, 5, 7, and 8 reverse the sequence one last time, pass it to the output, and pass a value back to node 3 to let execution begin on the next sequence. This is only necessary because the author failed to keep track of which stack held the forward sequence and which one held the reversed sequence.
 
-[Back](chapter06.md) - [Contents](README.md) - [Next](chapter08.md)
+[Back](chapter06.html) - [Contents](index.html) - [Next](chapter08.html)

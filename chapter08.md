@@ -1,4 +1,7 @@
-# Chapter 8: Stored Image Decoder and UNKNOWN
+---
+layout: page
+title: Chapter 8 - The End
+---
 
 ## Segment 70601: Stored Image Decoder
 
@@ -26,4 +29,4 @@ Node 1 calculates `OUT.R`; Nodes 4 and 6 read from node 1, passing one copy to t
 
 Warning: this program crashes on the random test if `OUT.R` changes just before the final -1 input.
 
-[Back](chapter07.md) - [Contents](README.md)
+[Back](chapter07.html) - [Contents](index.html)

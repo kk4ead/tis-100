@@ -1,4 +1,7 @@
-# Chapter 4: Sequence Generator through Interrupt Handler
+---
+layout: page
+title: Chapter 4 - Learning about Pipelining
+---
 
 # Segment 30647: Sequence Generator
 
@@ -95,4 +98,4 @@ Solution by [CaitSith2](https://github.com/CaitSith2).
 
 Works much like the optimized for speed solution, ecept that node 0 passes the value to node 1; node 1 passes its value and node 0's value to node 2; node 3 passes its value to node 2; and node 2 passes its value down, along with the values from nodes 0, 1, and 3.  Node 6 then adds up the values and passes the result down.
 
-[Back](chapter03.md) - [Contents](README.md) - [Next](chapter05.md)
+[Back](chapter03.html) - [Contents](index.html) - [Next](chapter05.html)

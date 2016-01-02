@@ -1,4 +1,7 @@
-# Chapter 3: Self-Test Diagnostic through Signal Multiplexer
+---
+layout: page
+title: Chapter 3 - Getting Started
+---
 
 ## Segment 00150: Self-Test Diagnostic
 
@@ -149,4 +152,4 @@ The trick here is recognizing that instead of having one node that chooses betwe
 
 In C syntax, the behavior we're looking for is: `OUT = ( (IN.S > 0) ? 0 : IN.A ) + ( (IN.S < 0) ? 0 : IN.B )`. The conditional assignments are parallelized between nodes 1 and 3, and node 6 performs the addition.
 
-[Back](chapter02.md) - [Contents](README.md) - [Next](chapter04.md)
+[Back](chapter02.html) - [Contents](index.html) - [Next](chapter04.html)
