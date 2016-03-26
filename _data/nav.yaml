@@ -1,0 +1,26 @@
+ - title: "Introduction"
+   href:  "/"
+
+ - title: "Part I: General Information"
+   subcategories:
+    - subtitle: "Chapter 1: Implementation Details"
+      subhref:  "/chapter01/"
+    - subtitle: "Chapter 2: Instruction Timings"
+      subhref:  "/chapter02/"
+
+ - title: "Part II: TIS-100 Spoilers"
+   subcategories:
+    - subtitle: "Chapter 3: Getting Started"
+      subhref:  "/chapter03/"
+    - subtitle: "Chapter 4: Pipelining"
+      subhref:  "/chapter04/"
+    - subtitle: "Chapter 5: Stack Memory Nodes"
+      subhref:  "/chapter05/"
+    - subtitle: "Chapter 6: Pretty Pictures"
+      subhref:  "/chapter06/"
+    - subtitle: "Chapter 7: Algorithms"
+      subhref:  "/chapter07/"
+    - subtitle: "Chapter 8: The End?"
+      subhref:  "/chapter08/"
+
+ - title: "Part III: TIS-NET Spoilers"
