@@ -111,7 +111,7 @@ Nodes 0 and 4 do some preprocessing on the input, as shown in the table below. T
 
 Pipelining these steps instead of waiting until node 6 to do them saves almost 200 cycles.
 
-Step | Operation | Min  | -1   | 0    | 1    | Max
+Step | Operation |      |      |      |      |
 ---- | --------- | ---- | ---- | ---- | ---- | ---
 0    | (Input)   | -999 | -1   | 0    | 1    | 999
 1    | `SUB 998` | -999 | -999 | -998 | -997 | 1
@@ -152,9 +152,10 @@ Node 2 contains all the logic. When `IN.S` is nonzero, we need to discard one of
 Node 2 calculates `(4*IN.S) + 5`, which transforms -1 / 0 / 1 into 1 / 5 / 9. Node 6 uses that value as an argument to `JRO`, and reads `IN.A` and `IN.B` from nodes 5 and 7.
 
 Notes on this program:
- - The `NOP`s are never executed; they're only there for padding.
- - It's much easier to multiply a number by a power of 2 than by an arbitrary integer.
- - We can read `IN.B` into the `ACC` of node 6 even before the `JRO`, since we know we'll need to consume both input values anyway.
+
+- The `NOP`s are never executed; they're only there for padding.
+- It's much easier to multiply a number by a power of 2 than by an arbitrary integer.
+- We can read `IN.B` into the `ACC` of node 6 even before the `JRO`, since we know we'll need to consume both input values anyway.
 
 ### Optimized for speed: 204 cycles, 7 nodes, 21 instructions
 

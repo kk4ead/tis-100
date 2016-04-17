@@ -45,15 +45,11 @@ Node 9 stores its count of inputs in `BAK`. It resets the counter by `SWP`ing in
 
 This doesn't take many changes; just use node 10 as an extra register for node 8.
 
-## Optimized for size: 324 cycles, 4 nodes, 20 instructions
+## Optimized for size... without using SWP: 298 cycles, 4 nodes, 19 instructions
 
 [Save file](save/31904.2.txt)
 
-Node 9 gets its input routed through node 8, and node 4's `BAK` stores the running sum instead of node 7.
-
-## Optimized for size without using SWP: 298 cycles, 4 nodes, 19 instructions
-
-[Save file](save/31904.3.txt)
+Solution by [CaitSith2](https://github.com/CaitSith2).
 
 Node 4 decides whether the input is 0 or not.  If it is not 0, the input is passed to Node 8, where it is added, and node 9 gets instructed to increment the ACC. A 0 likewise tells nodes 8 and 9 to output their totals, and reset.  This is done JRO style.
 
@@ -74,9 +70,10 @@ Nodes 1, 2, and 5 generate four copies of the current input: two for node 6 and 
 Note that each node's program _should_ take the same amount of time (5 cycles) unless an edge is detected, so the limiting factor for performance is a pipeline stall in nodes 6 and 8: the `SUB UP` instruction blocks for one cycle while waiting for new input from nodes 2 and 5. Fixing this stall would save 40 cycles (one cycle per input).
 
 For homework:
- - Try to predict how many cycles would be wasted by swapping the `SUB 10` and `SUB UP` instructions in node 8.
- - Swap the `MOV ACC DOWN` and `MOV ACC RIGHT` instructions in node 1. How many cycles are wasted?
- - Can you restore the program's original throughput by changing two additional instructions?
+
+- Try to predict how many cycles would be wasted by swapping the `SUB 10` and `SUB UP` instructions in node 8.
+- Swap the `MOV ACC DOWN` and `MOV ACC RIGHT` instructions in node 1. How many cycles are wasted?
+- Can you restore the program's original throughput by changing two additional instructions?
 
 # Segment 33762: Interrupt Handler
 
