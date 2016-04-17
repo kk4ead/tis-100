@@ -59,7 +59,7 @@ For each rectangle, the starting X value and the width are passed through node 4
 
 All the computation takes place in node 9. For each column, the X value is stored in `BAK` and the starting Y value (18 minus the column height) is read into `ACC`. A pixel is drawn and the Y value is incremented until it reaches the bottom of the screen, then the X value is incremented and a new starting Y value is read from the input.
 
-### Optimized for speed: 2557 cycles, 5 nodes, 26 instructions
+### Semi-optimized for speed: 2557 cycles, 5 nodes, 26 instructions
 
 [Save file](save/53897.1.txt)
 

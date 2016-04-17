@@ -65,7 +65,7 @@ The addition step is a bottleneck, but fortunately it's simple enough to paralle
 
         MOV UP DOWN
         MOV UP RIGHT
-        
+
 at node 1 and
 
         MOV LEFT DOWN
@@ -75,15 +75,25 @@ at node 5 just to make sure the values come out in the right order, but we'll sa
 
 ## Segment 20176: Differential Converter
 
-### 201 cycles, 5 nodes, 11 instructions
+### Optimized for speed: 200 cycles, 5 nodes, 11 instructions
 
 [Save file](save/20176.0.txt)
 
+Finishing touches by [Solomute](https://github.com/solomute).
+
 Node 2: calculate `IN.B - IN.A` and pass it on
 
-Node 9: pass `IN.B - IN.A` to `OUT.N` and node 10
+Node 9: pass `IN.B - IN.A` to `OUT.N` and node 8
 
-Node 10: `-(IN.B - IN.A) = IN.A - IN.B`; pass it to `OUT.P`
+Node 8: negate the value from node 9 to get `IN.A - IN.B`; pass it to `OUT.P`
+
+### Optimized for size: 240 instructions, 5 nodes, 10 instructions
+
+[Save file](save/20176.1.txt)
+
+Solution by [imamassi](https://github.com/imamassi).
+
+Node 9 multiplies `IN.B - IN.A` by -1 before passing it to node 8, saving an instruction.
 
 ## Segment 21340: Signal Comparator
 
@@ -101,7 +111,7 @@ Nodes 0 and 4 do some preprocessing on the input, as shown in the table below. T
 
 Pipelining these steps instead of waiting until node 6 to do them saves almost 200 cycles.
 
-Step | Operation | Min  | -1   | 0    | 1    | Max
+Step | Operation |      |      |      |      |
 ---- | --------- | ---- | ---- | ---- | ---- | ---
 0    | (Input)   | -999 | -1   | 0    | 1    | 999
 1    | `SUB 998` | -999 | -999 | -998 | -997 | 1
@@ -120,16 +130,18 @@ Nodes 6 through 8 use the processed input value as an index into the rest of the
         3: MOV 1 DOWN
            JMP LOOP
         5+: MOV 0 DOWN
-        
+
 Since a positive input can result in a value anywhere from 5 to 998, and a `JRO` past the end of the program behaves the same as a `JRO` to the end, the 5 "case" needs to be the last instruction in the program.
 
 If we had to choose between a fixed range of values (for example, 1 through 5), we could write a straightforward jump table instead. And in the next problem, we'll do that.
 
 ## Segment 22280: Signal Multiplexer
 
-### Optimized for size: 272 cycles, 5 nodes, 16 instructions
+### Optimized for size: 262 cycles, 5 nodes, 16 instructions
 
 [Save file](save/22280.0.txt)
+
+Speed optimizations by [imamassi](https://github.com/imamassi).
 
 Node 2 contains all the logic. When `IN.S` is nonzero, we need to discard one of the values, otherwise `IN.A` and `IN.B` will get out of sync with each other.
 
@@ -137,12 +149,13 @@ Node 2 contains all the logic. When `IN.S` is nonzero, we need to discard one of
 
 [Save file](save/22280.1.txt)
 
-Node 2 calculates `(4*IN.S) + 5`, which transforms -1 / 0 / 1 into 1 / 5 / 9. Node 6 uses that value as an argument to `JRO`, and reads `IN.A` and `IN.B` from nodes 5 and 7. 
+Node 2 calculates `(4*IN.S) + 5`, which transforms -1 / 0 / 1 into 1 / 5 / 9. Node 6 uses that value as an argument to `JRO`, and reads `IN.A` and `IN.B` from nodes 5 and 7.
 
 Notes on this program:
- - The `NOP`s are never executed; they're only there for padding.
- - It's much easier to multiply a number by a power of 2 than by an arbitrary integer.
- - We can read `IN.B` into the `ACC` of node 6 even before the `JRO`, since we know we'll need to consume both input values anyway.
+
+- The `NOP`s are never executed; they're only there for padding.
+- It's much easier to multiply a number by a power of 2 than by an arbitrary integer.
+- We can read `IN.B` into the `ACC` of node 6 even before the `JRO`, since we know we'll need to consume both input values anyway.
 
 ### Optimized for speed: 204 cycles, 7 nodes, 21 instructions
 

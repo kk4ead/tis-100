@@ -15,7 +15,7 @@ Node 1 stores the current color in `BAK` and the line length in `ACC`, generatin
 
 Node 5 breaks the sequence from node 1 into rows of 30 values, and inserts the appropriate control values: starting column (always zero), starting row, terminating -1.
 
-## Segment UNKNOWN: Anti-Temper Certification
+## Segment UNKNOWN: Anti-Tamper Certification
 
 ### 843 cycles, 6 nodes, 37 instructions
 

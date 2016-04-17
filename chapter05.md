@@ -42,7 +42,7 @@ Node 9 calculates the maximum value similarly.
 
 ## Segment 42656: Sequence Reverser
 
-### 349 cycles, 4 nodes, 11 instructions
+### Optimized for size: 349 cycles, 4 nodes, 11 instructions
 
 [Save file](save/42656.0.txt)
 
@@ -75,6 +75,18 @@ Node 1 makes each input sequence exactly 6 values long by adding -1s to the end,
 Node 5 reads in a sequence of exactly 6 values from `LEFT`, then outputs the same sequence in reverse order to `DOWN`, followed by a 0. Three of the values are stored temporarily in node 6.
 
 Node 7 passes values from node 5 to the output, discarding all -1s that were added by node 4.
+
+### Optimized for speed: 287 cycles, 4 nodes, 34 instructions
+
+[Save file](save/42656.2.txt)
+
+Solution by [gmnenad](https://github.com/gmnenad).
+
+Nodes 1 and 4 save each sequence of numbers to the Stack Memory Nodes, alternating between the upper node (during the loop labeled `S`) and the lower node (during the loop labeled `S2`).
+
+Nodes 5 and 7 read each sequence of numbers from the Stack Memory Nodes and write them to the output.
+
+Each node passes a -1 to the other nodes when it finishes filling or emptying a stack.
 
 ## Segment 43786: Signal Multiplier
 

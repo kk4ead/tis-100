@@ -1,0 +1,67 @@
+@0
+
+
+@1
+   MOV 0     RIGHT
+
+S: MOV UP    ACC
+   MOV ACC   RIGHT
+   JNZ S
+
+   MOV -1    DOWN
+
+S2:MOV UP    ACC
+   MOV ACC   DOWN
+   JNZ S2
+
+   MOV DOWN  ACC
+
+@2
+
+
+@3
+
+
+@4
+   MOV UP    ACC
+   MOV ACC   RIGHT
+   MOV 0     DOWN
+
+S2:MOV UP    ACC
+   MOV ACC   DOWN
+   JNZ S2
+
+   MOV RIGHT UP
+   MOV RIGHT ACC
+
+@5
+   MOV LEFT  ACC
+   MOV UP    ACC
+
+E: MOV UP    ACC
+   MOV ACC   DOWN
+   JNZ E
+
+   MOV -1    LEFT
+   MOV -1    DOWN
+   MOV DOWN  LEFT
+
+@6
+
+
+@7
+S: MOV UP     ACC
+   JLZ E
+   MOV ACC    DOWN
+   JMP S
+
+E: MOV LEFT   ACC
+
+S2:MOV LEFT   ACC
+   MOV ACC    DOWN
+   JNZ S2
+
+   MOV -1     UP
+
+@8
+
