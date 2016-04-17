@@ -59,9 +59,15 @@ Coming soon!
 
 ## Authors
 
-[George Schaertl](https://github.com/kk4ead) (KK4EAD)
+[kk4ead](https://github.com/kk4ead)
 
 [CaitSith2](https://github.com/CaitSith2) -- many optimized solutions
+
+[mercutiodesign](https://github.com/mercutiodesign) -- bugfixes
+
+[imamassi](https://github.com/imamassi) -- optimizations
+
+[Solomute](https://github.com/Solomute) -- optimizations
 
 ## License
 
