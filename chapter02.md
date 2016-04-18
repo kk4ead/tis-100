@@ -61,5 +61,3 @@ _Exercise:_ What happens when you `JRO UP/DOWN/LEFT/RIGHT` and the input value i
 ### For all nodes
 
 - [REDACTED]
-
-[Back](chapter01.html) - [Contents](index.html) - [Next](chapter03.html)

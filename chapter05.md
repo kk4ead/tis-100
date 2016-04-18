@@ -7,7 +7,7 @@ title: Chapter 5 - Using Stack Memory Nodes
 
 ### 174 cycles, 4 nodes, 14 instructions
 
-[Save file](save/40196.0.txt)
+[Save file](../save/40196.0.txt)
 
 Node 0 contains all the logic. The program switches between different _states_ (no zeros, one zero, and two or more zeros) instead of counting consecutive zeros by incrementing a register.
 
@@ -34,7 +34,7 @@ The Signal Pattern Detector was originally segment 40633, and the sequence to be
 
 ### 265 cycles, 6 nodes, 32 instructions
 
-[Save file](save/41427.0.txt)
+[Save file](../save/41427.0.txt)
 
 Node 8 calculates the minimum value by comparing each input to the smallest value it has seen so far (or to 999 for the first value in a sequence). Two copies of each input are used. The second copy is either stored as the new minimum value or used to restore the previous minimum (`ADD UP` saves several cycles over `MOV UP NIL / SWP / SAV`).
 
@@ -44,7 +44,7 @@ Node 9 calculates the maximum value similarly.
 
 ### Optimized for size: 349 cycles, 4 nodes, 11 instructions
 
-[Save file](save/42656.0.txt)
+[Save file](../save/42656.0.txt)
 
 Node 5 saves a zero to the empty stack, so it can detect the "bottom" of the stack without having to keep track of the number of values on the stack. Node 5 reads input values and pushes them onto the stack until it receives a zero, then pops values off the stack and sends them to the output until it sees a -1 again.
 
@@ -66,7 +66,7 @@ In general, it's faster to write loops that have only one conditional jump at th
 
 ### Without Stack Memory Nodes: 759 cycles, 7 nodes, 42 instructions
 
-[Save file](save/42656.1.txt)
+[Save file](../save/42656.1.txt)
 
 Optimized by [CaitSith2](https://github.com/CaitSith2).
 
@@ -78,7 +78,7 @@ Node 7 passes values from node 5 to the output, discarding all -1s that were add
 
 ### Optimized for speed: 287 cycles, 4 nodes, 34 instructions
 
-[Save file](save/42656.2.txt)
+[Save file](../save/42656.2.txt)
 
 Solution by [gmnenad](https://github.com/gmnenad).
 
@@ -92,7 +92,7 @@ Each node passes a -1 to the other nodes when it finishes filling or emptying a 
 
 ### Naive solution: 1007 cycles, 5 nodes, 32 instructions
 
-[Save file](save/43786.0.txt)
+[Save file](../save/43786.0.txt)
 
 Nodes 1 and 2 are reused from Sequence Generator, and determine which is larger between `IN.A` and `IN.B`.
 
@@ -102,7 +102,7 @@ Node 7 is reused from Sequence Counter, and calculates the sum of each sequence 
 
 ### Optimized for size: 639 cycles, 4 nodes, 27 instructions
 
-[Save file](save/43786.1.txt)
+[Save file](../save/43786.1.txt)
 
 Solution by [CaitSith2](https://github.com/CaitSith2).
 
@@ -114,7 +114,7 @@ Node 7 starts with zero in `ACC` and uses the copy of `10 - IN.B` passed from no
 
 ### Optimized for speed: 474 cycles, 6 nodes, 45 instructions
 
-[Save file](save/43786.2.txt)
+[Save file](../save/43786.2.txt)
 
 Solution by [CaitSith2](https://github.com/CaitSith2).
 
@@ -122,7 +122,7 @@ Node 2 compares `IN.A` and `IN.B` as in the naive solution, and passes the large
 
 ### Shift-and-add: 789 cycles, 5 nodes, 46 instructions
 
-[Save file](save/43786.3.txt)
+[Save file](../save/43786.3.txt)
 
 Optimized solution by [CaitSith2](https://github.com/CaitSith2).
 
@@ -133,5 +133,3 @@ Nodes 1 and 4 calculate the binary representation of `IN.A` (with 3 representing
 Node 5 uses the binary value of `IN.A` to determine when to pass a copy of `IN.B` to node 7 and when to pass a zero value.
 
 Node 7 sums up the values from node 5, shifting `ACC` one bit to the left (i.e. multiplying it by 2) after each step.
-
-[Back](chapter04.html) - [Contents](index.html) - [Next](chapter06.html)

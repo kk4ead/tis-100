@@ -1,17 +1,17 @@
-# Site settings
+permalink: pretty
+# relative_permalinks: true
+
 title: Tessellated Intelligence System Best Practices
-owner: George Schaertl (KK4EAD)
-email: george@schaertl.org
-description: > # this means to ignore newlines until "baseurl:"
-  An (eventually) comprehensive spoiler for Zachtronics' game TIS-100, with notes on the system architecture, some common optimization techniques, and annotated solutions for each program.
-baseurl: "/tis-100" # the subpath of your site, e.g. /blog/
-url: "http://www.kk4ead.org" # the base hostname & protocol for your site
-twitter_username: deenergize2trip
-github_username:  kk4ead
+tagline:
+description: An (eventually) comprehensive spoiler for TIS-100
 
-# Build settings
-markdown: kramdown
+url: http://www.kk4ead.org
+baseurl: /tis-100
 
-gems:
- - jekyll-sitemap
- 
+author:
+  name: George Schaertl (KK4EAD)
+  url: http://www.kk4ead.org/
+  email: george@schaertl.org
+
+github:
+  repo: https://github.com/kk4ead/tis-100
