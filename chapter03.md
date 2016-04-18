@@ -7,13 +7,13 @@ title: Chapter 3 - Getting Started
 
 ### Optimized: 83 cycles, 8 nodes, 8 instructions
 
-[Save file](save/00150.0.txt)
+[Save file](../save/00150.0.txt)
 
 A pretty straightforward program: just `MOV` data from one port to the next. This program shows the theoretical maximum throughput of one value per 2 cycles.
 
 ### Pessimized: 100037 cycles, 8 nodes, 16 instructions
 
-[Save file](save/00150.1.txt)
+[Save file](../save/00150.1.txt)
 
 Mostly the same as the optimized version, but let's take a look at node 0. It spends over 99% of its time in the inner loop:
 
@@ -53,13 +53,13 @@ This program could be further pessimized by changing the constants from 2 and 63
 
 ### Optimized for size: 160 cycles, 4 nodes, 6 instructions
 
-[Save file](save/10981.0.txt)
+[Save file](../save/10981.0.txt)
 
 Multiplying a number by 2 is the same as adding it to itself, but we have to read it into `ACC` first. The read and the addition take 2 cycles, leaving the input and the downstream nodes idle 50% of the time.
 
 ### Optimized for speed: 84 cycles, 5 nodes, 9 instructions
 
-[Save file](save/10981.1.txt)
+[Save file](../save/10981.1.txt)
 
 The addition step is a bottleneck, but fortunately it's simple enough to parallelize easily. If we can split the input values into two streams by sending them alternately to nodes 2 and 4, then we can join the streams back together at node 5 and double our throughput. We could write
 
@@ -77,7 +77,7 @@ at node 5 just to make sure the values come out in the right order, but we'll sa
 
 ### Optimized for speed: 200 cycles, 5 nodes, 11 instructions
 
-[Save file](save/20176.0.txt)
+[Save file](../save/20176.0.txt)
 
 Finishing touches by [Solomute](https://github.com/solomute).
 
@@ -89,7 +89,7 @@ Node 8: negate the value from node 9 to get `IN.A - IN.B`; pass it to `OUT.P`
 
 ### Optimized for size: 240 instructions, 5 nodes, 10 instructions
 
-[Save file](save/20176.1.txt)
+[Save file](../save/20176.1.txt)
 
 Solution by [imamassi](https://github.com/imamassi).
 
@@ -99,13 +99,13 @@ Node 9 multiplies `IN.B - IN.A` by -1 before passing it to node 8, saving an ins
 
 ### Optimized for size: 278 cycles, 6 nodes, 20 instructions
 
-[Save file](save/21340.0.txt)
+[Save file](../save/21340.0.txt)
 
 Nodes 6, 7, and 8 have nearly identical programs: First, pass the input value along to the next node. If the value is (greater than / equal to / less than) zero, output a one. Otherwise, output a zero and move on to the next input.
 
 ### Without conditional jumps: 272 cycles, 6 nodes, 30 instructions
 
-[Save file](save/21340.1.txt)
+[Save file](../save/21340.1.txt)
 
 Nodes 0 and 4 do some preprocessing on the input, as shown in the table below. The final value going into node 6 will be 1 for any negative input, 3 for a zero input, and 5 or greater for any positive input.
 
@@ -139,7 +139,7 @@ If we had to choose between a fixed range of values (for example, 1 through 5), 
 
 ### Optimized for size: 262 cycles, 5 nodes, 16 instructions
 
-[Save file](save/22280.0.txt)
+[Save file](../save/22280.0.txt)
 
 Speed optimizations by [imamassi](https://github.com/imamassi).
 
@@ -147,7 +147,7 @@ Node 2 contains all the logic. When `IN.S` is nonzero, we need to discard one of
 
 ### Using JRO: 239 cycles, 7 nodes, 22 instructions
 
-[Save file](save/22280.1.txt)
+[Save file](../save/22280.1.txt)
 
 Node 2 calculates `(4*IN.S) + 5`, which transforms -1 / 0 / 1 into 1 / 5 / 9. Node 6 uses that value as an argument to `JRO`, and reads `IN.A` and `IN.B` from nodes 5 and 7.
 
@@ -159,10 +159,8 @@ Notes on this program:
 
 ### Optimized for speed: 204 cycles, 7 nodes, 21 instructions
 
-[Save file](save/22280.2.txt)
+[Save file](../save/22280.2.txt)
 
 The trick here is recognizing that instead of having one node that chooses between three output values, we can use _two_ nodes that each make a simpler choice between _two_ output values. When `IN.S` is zero, we add both `IN.A` and `IN.B` to the output; when `IN.S` is -1, we only add `IN.A`; and when `IN.S` is 1, we only add `IN.B`.
 
 In C syntax, the behavior we're looking for is: `OUT = ( (IN.S > 0) ? 0 : IN.A ) + ( (IN.S < 0) ? 0 : IN.B )`. The conditional assignments are parallelized between nodes 1 and 3, and node 6 performs the addition.
-
-[Back](chapter02.html) - [Contents](index.html) - [Next](chapter04.html)
