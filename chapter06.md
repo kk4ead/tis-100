@@ -63,7 +63,7 @@ All the computation takes place in node 9. For each column, the X value is store
 
 [Save file](../save/53897.1.txt)
 
-Optimization by [Confused-Enemy](https://github.com/Confused-Enemy).
+Solution by [Confused-Enemy](https://github.com/Confused-Enemy).
 
 Node 0 acts as a switching node for Node 4 (Lines) + Node 3 (Dots/Points). It determines which side of the two line column it will draw down the dot values ~ right side down <0; left side down >0; no dots = 0. It also sends a value to Node 3 instructing it to wait (no dots to send out due to equal line height) or to go ahead and process the Y value stored in acc. It will always process line values first, if any, before handing control over to Node 3. Exhaustively, this Node also tells Node 6 whether to increment its X value before processing the dots Y values as well as after Y processing, if needed.
 
