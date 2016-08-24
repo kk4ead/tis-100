@@ -65,27 +65,12 @@ All the computation takes place in node 9. For each column, the X value is store
 
 Solution by [Confused-Enemy](https://github.com/Confused-Enemy).
 
-Node 0 acts as a switching node for Node 4 (Lines) + Node 3 (Dots/Points). It determines which side of the two line column it will draw down the dot values ~ right side down <0; left side down >0; no dots = 0. It also sends a value to Node 3 instructing it to wait (no dots to send out due to equal line height) or to go ahead and process the Y value stored in acc. It will always process line values first, if any, before handing control over to Node 3. Exhaustively, this Node also tells Node 6 whether to increment its X value before processing the dots Y values as well as after Y processing, if needed.
+Got bored, work it out for yourself :)
 
-Nodes 1 + 2 determine the highest and lowest input of 2 values at a time, reversing the scale from 18-0 to 0-18 (Bringing it in-line with TIS-100's image xy-coordinate system). The highest value goes to Node 0 and lowest goes to Node 3. They also both act as a gateway for 2-way communications between Nodes 0 + 3.
+This is almost as fast as a 2 way can get. I think it is possible to get 3 way down faster, just a matter of grey.
 
-Node 3 counts Y values for dot coords. It also lets Node 0 know when it has completed sending out its dot values.
+GL
 
-Node 4 counts Y values for line coords. It also switches on Node 0 commands instructing what Node 6 should do with X values.
-
-Node 5 acts as a gateway to send line values down to Node 8 as well as send or increment the X value to push from Node 6 down to Node 9; It also responds to Node 7 for Dot coord processing.
-
-Node 6 either pushes out the X value or increments the X value based on input from Node 0 which is passed to it via Node 4 + 5. 
-
-Node 7 simply holds to send the Y value down from Node 3 and then instructs Node 6 to push the current X value down.
-
-Node 8 takes the Y Value and stores it temporarilly (Kind of like a wait instruction before NOP) to allow for the X value to send first.
-
-Node 9 pushes any down
-
-Node 10 recieves Y value before NOPping, allowing exact sync timing for the X value to be sent down first.
-
-May be possible to optimise this further based on the mixed scheme of using lines and points. Lines are more optimal to send out as at least a two point line which will use 5 instructions and to perform the same draw operation using individual points will use 8 instructions.
 
 ### Theoretically optimal: 2467 cycles, 6 nodes, 25 instructions
 
