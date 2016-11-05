@@ -25,6 +25,14 @@ Nodes 5 and 8 take turns writing values to the output. Since node 5 writes both 
 
 ## Segment 51781: Image Test Pattern 2
 
+### Single node: 3933 cycles, 1 node, 14 instructions
+
+[Save file](../save/51781.0.txt)
+
+Solution by [rednax1206](https://www.reddit.com/user/rednax1206).
+
+The X value is stored in `ACC` and the Y value is stored in `BAK`. Clever use of subtraction and addition determines the next X value.
+
 ### Optimized for speed: 1187 cycles, 4 nodes, 27 instructions
 
 [Save file](../save/51781.1.txt)
