@@ -145,17 +145,16 @@ Speed optimizations by [imamassi](https://github.com/imamassi).
 
 Node 2 contains all the logic. When `IN.S` is nonzero, we need to discard one of the values, otherwise `IN.A` and `IN.B` will get out of sync with each other.
 
-### Using JRO: 239 cycles, 7 nodes, 22 instructions
+### Using JRO: 225 cycles, 7 nodes, 20 instructions
 
 [Save file](../save/22280.1.txt)
 
-Node 2 calculates `(4*IN.S) + 5`, which transforms -1 / 0 / 1 into 1 / 5 / 9. Node 6 uses that value as an argument to `JRO`, and reads `IN.A` and `IN.B` from nodes 5 and 7.
+Node 2 calculates `IN.S + 2`, which transforms -1 / 0 / 1 into 1 / 2 / 3. Node 6 uses that value as an argument to `JRO`, and reads `IN.A` and `IN.B` from nodes 5 and 7.
 
 Notes on this program:
 
-- The `NOP`s are never executed; they're only there for padding.
-- It's much easier to multiply a number by a power of 2 than by an arbitrary integer.
-- We can read `IN.B` into the `ACC` of node 6 even before the `JRO`, since we know we'll need to consume both input values anyway.
+- Both inputs always need to be consumed even if only one is used, so we `MOV` the unused input to `NIL` in order to get rid of it.
+- The possible cases in node 6 are reordered to 1 / -1 / 0 to avoid an extra `JMP` instruction in the case that `IN.S` is 1.
 
 ### Optimized for speed: 203 cycles, 7 nodes, 21 instructions
 
