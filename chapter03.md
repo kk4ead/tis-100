@@ -157,7 +157,7 @@ Notes on this program:
 - It's much easier to multiply a number by a power of 2 than by an arbitrary integer.
 - We can read `IN.B` into the `ACC` of node 6 even before the `JRO`, since we know we'll need to consume both input values anyway.
 
-### Optimized for speed: 204 cycles, 7 nodes, 21 instructions
+### Optimized for speed: 203 cycles, 7 nodes, 21 instructions
 
 [Save file](../save/22280.2.txt)
 
