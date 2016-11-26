@@ -64,6 +64,7 @@ Coming soon!
 - [mercutiodesign](https://github.com/mercutiodesign) -- bugfixes
 - [imamassi](https://github.com/imamassi) -- optimizations
 - [Solomute](https://github.com/Solomute) -- optimizations
+- [Stuntddude](https://github.com/Stuntddude) -- optimizations
 
 ## License
 
