@@ -29,6 +29,20 @@ After running the program, look at the path from `IN.B` to `OUT`. Node 6 is busi
 
 For homework, swap the order of the `MOV ACC RIGHT` and `MOV ACC DOWN` instructions in Node 1. What happens? Why?
 
+### Optimized for nodes: 108 cycles, 5 nodes, 21 instructions
+
+[Save file](../save/30647.2.txt)
+
+The idea is the following: we need to store the difference `IN.B` – `IN.A` and the number `IN.A`. First, we can determine in what order to display the numbers A and B, and second, we know these two numbers (B = B – A + A).
+
+For a start, we will send the number A into two processors. Fundamentally, to first send to the right processor, and then only to the down(below will be clearer).
+
+In the right CPU, we calculate the difference B – A, while at the down CPU we will only get a top – for parallelization processes.
+
+Next we look at the value of B – A, and left get A twice – first time to determine the number of B(as B is B – A  + A), and the second time to display the number of A. Now it becomes clear that logical in the beginning to submit A into the right CPU and then only to the down, because most of the work is here and we fundamentally get the difference B – A before the number A. 
+
+Note: If you decide to change the flow of A first at the down processor and then to the right, we get 138 cycles, you can check:)
+
 ## Segment 31904: Sequence Counter
 
 ### Optimized for speed: 238 cycles, 6 nodes, 22 instructions
