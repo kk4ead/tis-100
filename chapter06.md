@@ -59,15 +59,18 @@ For each rectangle, the starting X value and the width are passed through node 4
 
 All the computation takes place in node 9. For each column, the X value is stored in `BAK` and the starting Y value (18 minus the column height) is read into `ACC`. A pixel is drawn and the Y value is incremented until it reaches the bottom of the screen, then the X value is incremented and a new starting Y value is read from the input.
 
-### Semi-optimized for speed: 2557 cycles, 5 nodes, 26 instructions
+### Semi-optimized for speed: 1975 cycles, 11 nodes, 100 instructions
 
 [Save file](../save/53897.1.txt)
 
-Node 6 generates Y values, starting at the bottom of the screen for each column and moving upward until the column is finished.
+Solution by [Confused-Enemy](https://github.com/Confused-Enemy).
 
-Node 8 generates X values, starting at the left of the screen and moving one pixel to the right after each column is finished.
+Got bored, work it out for yourself :)
 
-Node 9 does nothing but write values to the output. Since it is only idle 3% of the time (nodes 6 and 8 take an additional 3 cycles to reset in between columns), this solution is almost--but not quite--theoretically optimal.
+This is almost as fast as a 2 way can get. I think it is possible to get 3 way down faster, just a matter of grey.
+
+GL
+
 
 ### Theoretically optimal: 2467 cycles, 6 nodes, 25 instructions
 
