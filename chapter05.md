@@ -76,7 +76,7 @@ Node 5 reads in a sequence of exactly 6 values from `LEFT`, then outputs the sam
 
 Node 7 passes values from node 5 to the output, discarding all -1s that were added by node 4.
 
-### Optimized for speed: 287 cycles, 4 nodes, 34 instructions
+### Optimized for speed: 257 cycles, 4 nodes, 33 instructions
 
 [Save file](../save/42656.2.txt)
 
