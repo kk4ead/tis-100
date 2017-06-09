@@ -31,21 +31,19 @@ For homework, swap the order of the `MOV ACC RIGHT` and `MOV ACC DOWN` instructi
 
 ## Segment 31904: Sequence Counter
 
-### Optimized for speed: 238 cycles, 6 nodes, 22 instructions
+Neither of these solutions uses the `SWP` instruction.
+
+### Optimized for speed: 220 cycles, 6 nodes, 22 instructions
 
 [Save file](../save/31904.0.txt)
 
+Solution by [gmnenad](https://github.com/gmnenad).
+
 Node 7 behaves like an extra register for node 8, storing the sum of all the inputs so far.
 
-Node 9 stores its count of inputs in `BAK`. It resets the counter by `SWP`ing in the zero that ends each sequence of numbers.
+Node 5 checks whether the input is 0 (signaling the end of a sequence) and passes the result to node 9, which counts the length of each sequence.
 
-### Without using SWP: 267 cycles, 7 nodes, 24 instructions.
-
-[Save file](../save/31904.1.txt)
-
-This doesn't take many changes; just use node 10 as an extra register for node 8.
-
-### Optimized for size... without using SWP: 298 cycles, 4 nodes, 19 instructions
+### Optimized for size: 298 cycles, 4 nodes, 19 instructions
 
 [Save file](../save/31904.2.txt)
 
