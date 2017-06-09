@@ -33,6 +33,8 @@ For homework, swap the order of the `MOV ACC RIGHT` and `MOV ACC DOWN` instructi
 
 [Save file](../save/30647.2.txt)
 
+Solution by [scrat98](https://github.com/scrat98).
+
 The idea is the following: we need to store the difference `IN.B` – `IN.A` and the number `IN.A`. First, we can determine in what order to display the numbers A and B, and second, we know these two numbers (B = B – A + A).
 
 For a start, we will send the number A into two processors. Fundamentally, to first send to the right processor, and then only to the down(below will be clearer).
