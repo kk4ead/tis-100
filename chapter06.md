@@ -51,13 +51,26 @@ For each rectangle, node 5 stores the starting X value and 6 minus the width, to
 
 For each row, node 9 passes the starting X value, the current Y value, and a sequence of the correct width to the output.
 
-### Optimized for speed: 601 cycles, 5 nodes, 36 instructions
+### Partially optimized for speed: 601 cycles, 5 nodes, 36 instructions
 
 [Save file](../save/52544.1.txt)
 
 Optimization by [CaitSith2](https://github.com/CaitSith2).
 
 For each rectangle, the starting X value and the width are passed through node 4 instead of tying up node 2 for four extra cycles.
+
+### Further optimized for speed: 559 cycles, 6 nodes, 34 instructions
+
+[Save file](../save/52544.2.txt)
+
+Solution by [gmnenad](https://github.com/gmnenad).
+
+This solution is almost theoretically optimal; it takes at least 551 cycles to output 139 pixels in 39 lines. Optimizations include:
+
+- Node 8 links node 4 (Y,H) and output node 9
+- Node 5 processes X and W while node 4 processes Y and H, so that only Y takes the longer path through node 8
+- Node 5 saves a `NEG` instruction by calculating `ACC = 6-UP` instead of `ACC = -(UP-6)`
+- The `JRO UP` instruction in node 9 is moved before all the output instructions, giving nodes 4 and 5 two more cycles to calculate the next line
 
 ## Segment 53897: Histogram Viewer
 
