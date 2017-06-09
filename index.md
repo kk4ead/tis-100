@@ -65,6 +65,7 @@ Coming soon!
 - [imamassi](https://github.com/imamassi) -- optimizations
 - [Solomute](https://github.com/Solomute) -- optimizations
 - [Stuntddude](https://github.com/Stuntddude) -- optimizations
+- [gmnenad](https://github.com/gmnenad) -- optimizations
 
 ## License
 
