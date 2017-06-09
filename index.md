@@ -67,6 +67,7 @@ Coming soon!
 - [Stuntddude](https://github.com/Stuntddude) -- optimizations
 - [gmnenad](https://github.com/gmnenad) -- optimizations
 - [rednax1206](https://www.reddit.com/user/rednax1206) -- optimizations
+- [scrat98](https://github.com/scrat98) -- optimizations
 
 ## License
 
