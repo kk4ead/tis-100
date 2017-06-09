@@ -79,6 +79,8 @@ Node 6 subtracts the current input from the previous input stored in `ACC`, take
 
 [Save file](../save/32050.1.txt)
 
+Optimizations by [CaitSith2](https://github.com/CaitSith2) and [Solomute](https://github.com/Solomute).
+
 Node 1 splits the input stream in order to stagger it. Node 2 uses the `BAK` register to continuously supply the previous value to node 5, which subtracts it from the current value to get the difference. To eliminate the need to check for two distinct cases (difference > 10 and difference < -10), node 8 computes the absolute value of the difference. Finally, node 9 checks whether the absolute difference is at least 10.
 
 For homework:
