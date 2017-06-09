@@ -66,6 +66,7 @@ Coming soon!
 - [Solomute](https://github.com/Solomute) -- optimizations
 - [Stuntddude](https://github.com/Stuntddude) -- optimizations
 - [gmnenad](https://github.com/gmnenad) -- optimizations
+- [rednax1206](https://www.reddit.com/user/rednax1206) -- optimizations
 
 ## License
 
