@@ -30,7 +30,7 @@ This is a simple loop that runs for 638 iterations, counting down from 638 to 0.
          JMP INNER     # Iterate the loop.
         DONE:
 
-Since TIS-100's conditional jump instructions are based on comparing `ACC` to zero, on every iteration we have to subtract 638 from the counter, compare the result to 0, then add 638 back again. This takes up 2 extra lines of code and 2 extra cycles per loop iteration. (Note: this loop runs for 639 iterations instead of 638. To understand why, try mentally walking through both loops using 2 for the number of iterations.)
+Since TIS-100's conditional jump instructions are based on comparing `ACC` to zero, on every iteration we have to subtract 638 from the counter, compare the result to 0, then add 638 back again. This takes up 2 extra lines of code and 2 extra cycles per loop iteration. (Note: having the exit command `JEZ` in the middle of the loop also makes it easier to introduce [off-by-one errors](https://en.wikipedia.org/wiki/Off-by-one_error); any parts of the loop above the `JEZ` will execute 639 times, while the parts below will execute 638 times. To understand why, try mentally walking through both loops but counting to 2 instead of 638.)
 
 Back to the program:
 
