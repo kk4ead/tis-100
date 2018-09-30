@@ -69,6 +69,10 @@ Coming soon!
 - [rednax1206](https://www.reddit.com/user/rednax1206) -- optimizations
 - [scrat98](https://github.com/scrat98) -- optimizations
 
+## Contributing
+
+This project is hosted [on GitHub](https://github.com/kk4ead/tis-100); please check out this [important note](CONTRIBUTING) about the project's status before opening an issue or submitting a pull request.
+
 ## License
 
 This guide is released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International Public License</a> (CC BY-SA 4.0).
