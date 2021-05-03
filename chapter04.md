@@ -91,13 +91,13 @@ For homework:
 
 ## Segment 33762: Interrupt Handler
 
-### Optimized for speed: 195 cycles, 10 nodes, 44 instructions
+### Optimized for speed: 169 cycles, 10 nodes, 44 instructions
 
 [Save file](../save/33762.0.txt)
 
-Finishing touches by [CaitSith2](https://github.com/CaitSith2) and [Solomute](https://github.com/Solomute).
+Solution by [Dostav](https://github.com/Dostav).
 
-Nodes 0 through 3 output their respective input numbers when their inputs change from zero to one; they output zero for all other conditions. (They are `ARMED` when the previous input was zero, and `DISARMED` when the previous input was one.)
+Nodes 0 through 3 output their respective input numbers when their inputs change from zero to one; they output zero for all other conditions.
 
 Nodes 5, 6, and 9 collect the outputs from nodes 0 through 3. Since we are guaranteed that two interrupts will never change in the same input cycle, adding the output values together results in the correct value for `OUT`.
 
