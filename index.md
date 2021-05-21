@@ -68,6 +68,7 @@ Coming soon!
 - [gmnenad](https://github.com/gmnenad) -- optimizations
 - [rednax1206](https://www.reddit.com/user/rednax1206) -- optimizations
 - [scrat98](https://github.com/scrat98) -- optimizations
+- [Dostav](https://github.com/Dostav) -- optimizations
 
 ## Contributing
 
