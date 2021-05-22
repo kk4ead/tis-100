@@ -40,6 +40,16 @@ Node 8 calculates the minimum value by comparing each input to the smallest valu
 
 Node 9 calculates the maximum value similarly.
 
+### Optimized for nodes: 400 cycles, 4 nodes, 34 instructions
+
+[Save file](../save/41427.1.txt)
+
+Solution by [Dostav](https://github.com/Dostav).
+
+Node 5, firstly, sends down the first sequence element and then checks for 0 if it is then sends 11 and starts from the beginning otherwise sends down 1 and the sequence element 4 times.
+
+Node 8 and 9, firstly, save the first sequence element and then calculate the minimum and the maximum values by following commands from Node 5 when Node 8 at the same time works as a bridge to pass values from Node 5 to Node 9.
+
 ## Segment 42656: Sequence Reverser
 
 ### Optimized for size: 349 cycles, 4 nodes, 11 instructions
